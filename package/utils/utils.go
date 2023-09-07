@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 )
@@ -15,6 +16,7 @@ func ParseBody(r *http.Request, x interface{}) {
 		// Menguraikan isi body yang berisi JSON ke dalam variabel x yang ditentukan oleh pengguna
 		if err := json.Unmarshal(body, x); err != nil {
 			// Jika terjadi kesalahan dalam penguraian JSON, fungsi ini mengembalikan nilai
+			fmt.Println("terjadi kesalahan")
 			return
 		}
 	}

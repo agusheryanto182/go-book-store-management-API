@@ -104,7 +104,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 // dan mengirimkan buku yang telah diperbarui sebagai respons JSON.
 func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	// Membuat instance baru dari model Book untuk menyimpan data yang diperbarui
-	var updateBook = models.Book{}
+	var updateBook = &models.Book{}
 
 	// Mengurai data permintaan HTTP dan memasukkannya ke dalam instance updateBook
 	utils.ParseBody(r, updateBook)
